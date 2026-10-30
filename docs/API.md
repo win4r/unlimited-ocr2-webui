@@ -2,7 +2,7 @@
 
 `app.py` 提供 FastAPI 路由，浏览器从同源 `/static/` 获取界面。任务由单个后台线程池串行执行，服务通过 HTTP 连接定制 SGLang。模型相关的 SGLang 导入发生在推理 worker 中；完整推理环境仍需按锁文件安装。
 
-`static/app.js` 负责上传、历史、原图、结果与任务轮询；`static/studio.js` 和 `studio.css` 增加资源面板、录屏、模式对照和 CER。KaTeX 与字体从本服务加载。
+`static/app.js` 负责上传、历史、结果与任务轮询；`source-viewer.js`/`source-viewer.css` 提供连续原图阅读、视口附近图片加载、页码与布局框同步；`static/studio.js` 和 `studio.css` 增加资源面板、录屏、模式对照和 CER。KaTeX 与字体从本服务加载。
 
 `telemetry.py` 独立每秒采样，优先 NVML、回退 nvidia-smi，浏览器轮询不触发独立 GPU 查询。`benchmark.py` 保留输入图像 SHA-256 和透明的 CER 算法。
 

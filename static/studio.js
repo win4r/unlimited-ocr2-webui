@@ -157,7 +157,7 @@ window.labHooks={
     if($('text-check-panel').open)loadRecognizedText();
   },
   content(value,selectedTab){if(studio.scope!=='page'||selectedTab==='logs')return null;const result=studio.pageResult;if(!result||result.page!==page)return '';return selectedTab==='preview'?result.rendered:selectedTab==='markdown'?result.markdown:result.raw;},
-  page(){studio.pageResult=null;studio.lastTextKey='';firstResult=true;updatePageResult();if($('text-check-panel').open)loadRecognizedText();}
+  page(){studio.pageResult=null;studio.lastTextKey='';if(studio.scope==='page'){firstResult=true;lastContent='';renderContent(true);updatePageResult();}if($('check-scope').value==='page'){$('check-result').innerHTML='';$('check-status').textContent=$('reference-text').value.trim()?`已切换到第 ${page} 页，请确认参考文本对应当前页。`:'';}if($('text-check-panel').open)loadRecognizedText();}
 };
 
 $('record-mode').onclick=()=>{const enabled=document.body.classList.toggle('recording');$('record-mode').textContent=enabled?'退出录屏':'录屏模式';$('record-mode').setAttribute('aria-pressed',String(enabled));localStorage.setItem('uocr-recording',enabled?'1':'0');};

@@ -35,7 +35,7 @@ def main():
         assert sha(PAYLOAD/'vendor'/filename)==upstream[key]['sha256'],filename
     for item in json.loads((PAYLOAD/'static/katex/assets-manifest.json').read_text()):
         assert sha(PAYLOAD/'static/katex'/item['file'])==item['sha256'],item['file']
-    for filename in ['app.js','studio.js']:
+    for filename in ['app.js','studio.js','source-viewer.js']:
         subprocess.run(['node','--check',str(PAYLOAD/'static'/filename)],check=True)
     manifest=''.join(sha(p)+'  '+p.relative_to(ROOT).as_posix()+'\n' for p in files)
     if args.write_checksums:(ROOT/'SHA256SUMS').write_text(manifest)

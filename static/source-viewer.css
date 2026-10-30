@@ -1,0 +1,13 @@
+.image-scroller{position:relative;overscroll-behavior:contain;overflow-anchor:none}
+.source{min-width:0}
+.image-scroller:focus-visible{outline:2px solid #9ab1ff;outline-offset:-2px}
+.source-pages{position:relative;display:flex;flex-direction:column;gap:18px;width:100%;min-width:0}
+.source-page{position:relative;display:block;margin:0;width:100%;min-width:0;background:white;border:1px solid #dce3ef;box-shadow:0 2px 12px #13244012}
+.source-page-caption{min-height:28px;padding:5px 10px;border-bottom:1px solid #e5eaf2;text-align:left;font-size:11px;color:var(--muted);background:#fafbfe;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.source-page.is-current .source-page-caption{color:var(--accent);background:#edf2ff}
+.source-page-image{position:relative;width:100%;overflow:hidden;background:white}
+.source-page-image>img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:contain}
+.source-page-image>img:not([src]){visibility:hidden}
+.source-boxes{position:absolute;inset:0;pointer-events:none}
+.source-meta{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.recording .source-pages{gap:12px}

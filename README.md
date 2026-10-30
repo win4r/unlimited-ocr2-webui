@@ -9,7 +9,7 @@
 ## 功能
 
 - PDF、多张图片、页码范围、150/200/300 DPI、每页输出预算与任务备注。
-- 原图/结果并排、逐页联动、布局框、预览、Markdown、原始输出和运行记录。
+- 原图连续滚动翻页、当前页自动同步、结果逐页联动、布局框、预览、Markdown、原始输出和运行记录。
 - GPU 利用率、整卡显存、RAM、CPU 的每秒采样与曲线，温度、功耗、任务基线和采样峰值。
 - 录屏模式，同图 Base/Gundam 重跑，输入指纹校验，首内容 token 等待、请求耗时和吞吐对照。
 - 人工参考文本 CER、差异标记、资源 CSV、实测总表、布局 JSON 和完整 ZIP。
@@ -72,6 +72,7 @@ config/runtime.env.example
 ```bash
 python3 scripts/verify_bundle.py
 python3 -m unittest discover -s tests -v
+node --test tests/source-viewer.test.js
 ```
 
 它们检查源码语法、文档链接、第三方资源/打包校验和，以及 smoke test 对缺少关键文字、截断警告的失败行为。新机器仍需执行真实 GPU 和浏览器验收。

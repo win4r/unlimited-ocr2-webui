@@ -1,6 +1,6 @@
 # 源码来源与验证范围
 
-本仓库从 [部署 Skill 的已发布版本](https://github.com/win4r/unlimited-ocr2-cloud-deploy/tree/ea13629345332959190a42c1aac0a0480cba0479/skills/unlimited-ocr2-cloud-deploy/assets/deployment) 提取为独立项目。核心 `app.py`、`benchmark.py`、`telemetry.py`、前端及运行脚本保留相同内容，调整的是仓库结构、文档与打包验证入口。
+本仓库从 [部署 Skill 的已发布版本](https://github.com/win4r/unlimited-ocr2-cloud-deploy/tree/ea13629345332959190a42c1aac0a0480cba0479/skills/unlimited-ocr2-cloud-deploy/assets/deployment) 提取为独立项目。首次发布保留了相同的核心源码，调整的是仓库结构、文档与打包验证入口。后续新增原图连续滚动阅读器，后端与模型启动参数保持原版本。
 
 ## 原部署证据
 
@@ -15,3 +15,7 @@
 发布时核对核心源码与已发布 payload 字节一致，执行无 GPU 的资源/语法/链接/校验和检查和 3 个 smoke-test 失败条件测试。公开仓库包含 CI。本次源代码发布没有重新部署或重启用户的云端服务，也不把这些仓库检查当作新的 GPU 验收。
 
 完整的用户文档、密码、原主机地址和任务历史未放入仓库。示意截图来自原创 12 页样本。第三方 wheel、后处理、KaTeX 的来源、版本与许可均保留，见 [THIRD_PARTY.md](../THIRD_PARTY.md)。
+
+## 连续滚动阅读更新
+
+原图按文档顺序连续排列，滚动自动更新当前页，保留页码快速跳转；图片和布局框仅在视口附近加载。使用原创 12 页和单页历史结果，实际检查了滚动、跟随当前页、快速跳转、布局框、录屏模式、任务切换和新建清理。页面参考文本随翻页保留并提示核对范围。新增 5 个 Node 测试覆盖页边界、短末页与混合高度；300 页仅测试页码算法，没有执行 300 页推理。本次仅原位更新静态文件，没有重启 Web 或模型服务，也没有重新执行 GPU 推理。
