@@ -1,0 +1,17 @@
+{
+  "model_revision": "c14071b549f4fcab10909f3c4acc6a2edb366947",
+  "sglang_wheel": {
+    "name": "sglang-0.5.20.dev13+g75b9b06b02-py3-none-any.whl",
+    "sha256": "576c71dab3cacad843f6870739494e13b2e8169a69cc038f84395d6503e801ea",
+    "source": "https://github.com/baidu/Unlimited-OCR/blob/6c5d1906ba638a7cd87bc00f14452a47fdabf16b/wheel/sglang-0.5.20.dev13+g75b9b06b02-py3-none-any.whl"
+  },
+  "postprocessor": {
+    "source": "https://raw.githubusercontent.com/baidu/Unlimited-OCR/6c5d1906ba638a7cd87bc00f14452a47fdabf16b/utils/process_unlimitedOCR2.py",
+    "sha256": "fb38738cd5f09625fb1095d201533b6059a85820bca99c4262347cc7b078a782"
+  },
+  "license": {
+    "source": "https://raw.githubusercontent.com/baidu/Unlimited-OCR/6c5d1906ba638a7cd87bc00f14452a47fdabf16b/LICENSE",
+    "sha256": "d985048c6d69429d685fdbe7557340aa0897c0fd8dc038299b148b9c75dc3383"
+  },
+  "baidu_code_revision": "6c5d1906ba638a7cd87bc00f14452a47fdabf16b"
+}
